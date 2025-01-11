@@ -88,6 +88,7 @@ Start the Laravel development server:
 The API will be available at http://localhost:8000.
 
 ### API Endpoints
+-
    - Authentication API
    - POST /login
    - POST /register
@@ -100,8 +101,8 @@ The API will be available at http://localhost:8000.
   - GET /customers/{id}
   - PUT /customers/{id}
   - DELETE /customers/{id}
-  -- POST /logout
- - - Testing
+  - POST /logout
+  - Testing
     
 To ensure API reliability, unit tests are written using PHPUnit. To run the tests, use the following command:
 
