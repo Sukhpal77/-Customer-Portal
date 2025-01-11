@@ -100,19 +100,20 @@ The API will be available at http://localhost:8000.
   - GET /customers/{id}
   - PUT /customers/{id}
   - DELETE /customers/{id}
-  - POST /logout
-  - Testing
+  -- POST /logout
+ - - Testing
     
 To ensure API reliability, unit tests are written using PHPUnit. To run the tests, use the following command:
 
     php artisan test
 
-Swagger UI Documentation
+### Swagger UI Documentation
+
 Access the interactive API documentation via Swagger UI at:
 
     http://localhost/api/documentation
 
-License
+### License
 
 - This project is licensed under the MIT License - see the LICENSE file for details.
 
