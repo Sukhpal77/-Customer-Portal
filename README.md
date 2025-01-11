@@ -87,8 +87,7 @@ Start the Laravel development server:
     php artisan serve
 The API will be available at http://localhost:8000.
 
-### API Endpoints
--
+- API Endpoints
    - Authentication API
    - POST /login
    - POST /register
