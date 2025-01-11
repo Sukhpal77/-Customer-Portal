@@ -41,17 +41,11 @@ Set up your MySQL database details:
 env
 
 Copy code
-
 DB_CONNECTION=mysql
-
 DB_HOST=127.0.0.1
-
 DB_PORT=3306
-
 DB_DATABASE=customer_portal
-
 DB_USERNAME=root
-
 DB_PASSWORD=your_database_password
     
 ### Email Configuration:
@@ -59,21 +53,13 @@ Configure email settings to send emails for password resets and other notificati
 
  env
 Copy code
-
 MAIL_MAILER=smtp
-
 MAIL_HOST=smtp.mailtrap.io
-
 MAIL_PORT=2525
-
 MAIL_USERNAME=your_mailtrap_username
-
 MAIL_PASSWORD=your_mailtrap_password
-
 MAIL_ENCRYPTION=tls
-
 MAIL_FROM_ADDRESS=noreply@yourdomain.com
-
 MAIL_FROM_NAME="${APP_NAME}"
 
 Note: You can replace MAIL_HOST, MAIL_USERNAME, and MAIL_PASSWORD with the credentials from your email service provider (e.g., Mailgun, SendGrid, etc.).
@@ -81,36 +67,31 @@ Note: You can replace MAIL_HOST, MAIL_USERNAME, and MAIL_PASSWORD with the crede
 ### 4. Generate Application Key
 Generate the application key for Laravel:
 
-    ```bash
     php artisan key:generate
     
 ### 5. Generate Client Personal Key (Laravel Passport)
 If you're using Laravel Passport for API authentication, you need to generate the personal access client key:
 
-    ```bash
     php artisan passport:install
 This command will generate the required keys for Passport authentication and create the client ID and secret used for authentication.
 
 ### 6. Set up Database
 Make sure the database is correctly set up in your .env file, then run the migrations to set up the database schema:
 
-    ```bash
     php artisan migrate
     
 ### 7. Update Composer Dependencies
 Update your Composer dependencies to ensure you have the latest versions of the packages:
 
-    ```bash
     composer update
     
 ### 8. Run the Application
 Start the Laravel development server:
 
-       ```bash
         php artisan serve
 The API will be available at http://localhost:8000.
 
-    ### API Endpoints
+### API Endpoints
         Authentication API
         POST /login
         POST /register
@@ -125,11 +106,9 @@ The API will be available at http://localhost:8000.
         DELETE /customers/{id}
         POST /logout
         Testing
-        To ensure API reliability, unit tests are written using PHPUnit. To run the tests, use the following command:
+To ensure API reliability, unit tests are written using PHPUnit. To run the tests, use the following command:
 
-    ```bash
        php artisan test
-
 
 Swagger UI Documentation
 Access the interactive API documentation via Swagger UI at:
@@ -137,5 +116,6 @@ Access the interactive API documentation via Swagger UI at:
     http://localhost/api/documentation
 
 License
-       This project is licensed under the MIT License - see the LICENSE file for details.
+
+    This project is licensed under the MIT License - see the LICENSE file for details.
 
