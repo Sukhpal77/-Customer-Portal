@@ -22,17 +22,9 @@ Clone the repository to your local machine:
 
     git clone [https://github.com/your-username/Customer-Portal.git](https://github.com/Sukhpal77/Customer-Portal.git
 
-### 2.Install Dependencies
-Navigate to the project directory and install the required dependencies:
+### 2.Navigate to the project directory:
 
     cd Customer-Portal
-    composer install
-    npm install
-### 3. Set up .env File
-Copy the example environment file and configure your environment settings:
-
-    cp .env.example .env
-Now, open the .env file and update the following configurations:
 
 ### Database Configuration:
 Set up your MySQL database details:
