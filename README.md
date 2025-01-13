@@ -15,7 +15,7 @@ This service is containerized using Docker to ensure a consistent and portable d
 
 ## Clone and Setup
 
-To set up the Customer Portal API locally, follow these steps:
+To set up the Customer Portal Application:
 
 ### 1. Clone the Repository
 Clone the repository to your local machine:
@@ -77,32 +77,34 @@ Use this command to run migrations and set up the database schema. Replace larav
   Once the containers are up and running, the API will be available at:
    
     http://localhost:80.
-
-- API Endpoints
-   - Authentication API
-   - POST /login
-   - POST /register
-  - POST /verify-mfa
-  - POST /forgot-password
-  - POST /reset-password
-  - Customer Management API
-  - GET /customers
-  - POST /customers
-  - GET /customers/{id}
-  - PUT /customers/{id}
-  - DELETE /customers/{id}
-  - POST /logout
-  - Testing
+![Screenshot 2025-01-12 171412](https://github.com/user-attachments/assets/a5945df3-25cb-4c32-963e-fd341fe0f20e)
     
-To ensure API reliability, unit tests are written using PHPUnit. To run the tests, use the following command:
+### 8. API Endpoints
+   - Authentication API
+     - POST /login
+     - POST /register
+     - POST /verify-mfa
+     - POST /forgot-password
+     - POST /reset-password
+  - Customer Management API
+    - GET /customers
+    - POST /customers
+    - GET /customers/{id}
+    - PUT /customers/{id}
+    - DELETE /customers/{id}
+    - POST /logout
+    
+### To ensure API reliability, unit tests are written using PHPUnit. To run the tests, use the following command:
 
     docker-compose exec laravel.test php artisan test
+![Screenshot 2025-01-12 171412](https://github.com/user-attachments/assets/9be95ac3-ee16-465a-8cbf-7c20b62d4c2d)   
 
 ### Swagger UI Documentation
 
 Access the interactive API documentation via Swagger UI at:
 
     http://localhost/api/documentation
+![Screenshot 2025-01-12 160053](https://github.com/user-attachments/assets/005451e6-daf6-4209-9be8-20d1227c7fe8)   
 
 ### License
 
