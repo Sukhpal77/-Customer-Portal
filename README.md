@@ -1,7 +1,9 @@
 # Customer Portal API
 
 ## Overview
-The **Customer Portal API** is a backend service built with **Laravel** for managing customer profiles and handling user authentication. It supports features like login, user registration, password management, and Multi-Factor Authentication (MFA). The API ensures secure communication using JWT tokens for authentication.
+The **Customer Portal** is a backend service built with **Laravel** for managing customer profiles and handling user authentication. It supports features like login, user registration, password management, and Multi-Factor Authentication (MFA). The API ensures secure communication using JWT tokens for authentication.
+
+This service is containerized using Docker to ensure a consistent and portable development environment. The application runs in isolated containers, making it easy to set up and deploy across various environments.
 
 ## Technologies Used
 - **Laravel** (PHP Framework)
@@ -9,6 +11,7 @@ The **Customer Portal API** is a backend service built with **Laravel** for mana
 - **MySQL** for database management
 - **PHPUnit** for testing
 - **Swagger UI** for interactive API documentation
+- **Dockerized** Setup for Easy Deployment
 
 ## Clone and Setup
 
@@ -17,13 +20,12 @@ To set up the Customer Portal API locally, follow these steps:
 ### 1. Clone the Repository
 Clone the repository to your local machine:
 
-    git clone https://github.com/your-username/customer-portal-api.git
-
+    git clone [https://github.com/your-username/Customer-Portal.git](https://github.com/Sukhpal77/Customer-Portal.git
 
 ### 2.Install Dependencies
 Navigate to the project directory and install the required dependencies:
 
-    cd customer-portal-api
+    cd Customer-Portal
     composer install
     npm install
 ### 3. Set up .env File
@@ -60,32 +62,29 @@ Configure email settings to send emails for password resets and other notificati
 
 Note: You can replace MAIL_HOST, MAIL_USERNAME, and MAIL_PASSWORD with the credentials from your email service provider (e.g., Mailgun, SendGrid, etc.).
 
-### 4. Generate Application Key
-Generate the application key for Laravel:
+## Docker Setup:
 
-    php artisan key:generate
+### 4. Start Docker Containers:
+
+    docker-compose up -d
+  This command starts your Docker containers defined in docker-compose.yml file in detached mode (-d).  
     
-### 5. Generate Client Personal Key (Laravel Passport)
-If you're using Laravel Passport for API authentication, you need to generate the personal access client key:
+### 5. Migrate Database:
 
-    php artisan passport:install
-This command will generate the required keys for Passport authentication and create the client ID and secret used for authentication.
+    docker-compose exec laravel.test php artisan migrate
+Use this command to run migrations and set up the database schema. Replace laravel.test with your Laravel service name defined in your docker-compose.yml file if it's different.
 
-### 6. Set up Database
-Make sure the database is correctly set up in your .env file, then run the migrations to set up the database schema:
+### 6. Install Passport Client Keys (if needed):
 
-    php artisan migrate
-    
-### 7. Update Composer Dependencies
-Update your Composer dependencies to ensure you have the latest versions of the packages:
+    docker-compose exec laravel.test php artisan passport:client --personal --no-interaction
+  This command generates the necessary keys for Laravel Passport if you're using it for API authentication. It creates the client ID and secret used for authentication. Replace laravel.test with your 
+  Laravel service name as needed.
 
-    composer update
-    
-### 8. Run the Application
-Start the Laravel development server:
 
-    php artisan serve
-The API will be available at http://localhost:8000.
+### 7. Access the API
+  Once the containers are up and running, the API will be available at:
+   
+    http://localhost:80.
 
 - API Endpoints
    - Authentication API
@@ -105,7 +104,7 @@ The API will be available at http://localhost:8000.
     
 To ensure API reliability, unit tests are written using PHPUnit. To run the tests, use the following command:
 
-    php artisan test
+    docker-compose exec laravel.test php artisan test
 
 ### Swagger UI Documentation
 
