@@ -9,7 +9,6 @@ use Tests\TestCase;
 
 class AuthControllerTest extends TestCase
 {
-
         public function setUp(): void
         {
             parent::setUp();
