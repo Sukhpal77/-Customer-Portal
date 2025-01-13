@@ -95,7 +95,7 @@ Use this command to run migrations and set up the database schema. Replace larav
 ## To ensure API reliability, unit tests are written using PHPUnit. To run the tests, use the following command:
 
     docker-compose exec laravel.test php artisan test
-![Screenshot 2025-01-12 171412](https://github.com/user-attachments/assets/9be95ac3-ee16-465a-8cbf-7c20b62d4c2d)   
+![Screenshot 2025-01-12 171412](https://github.com/user-attachments/assets/a937d3e9-3e34-4705-9bd8-e0a5b6d85b18)
 
 ## Swagger UI Documentation
 
