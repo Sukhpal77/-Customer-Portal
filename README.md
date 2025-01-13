@@ -1,4 +1,4 @@
-# Customer Portal API
+# Customer Portal
 
 ## Overview
 The **Customer Portal** is a backend service built with **Laravel** for managing customer profiles and handling user authentication. It supports features like login, user registration, password management, and Multi-Factor Authentication (MFA). The API ensures secure communication using JWT tokens for authentication.
