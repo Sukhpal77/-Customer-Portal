@@ -23,6 +23,12 @@ services:
             - sail
         depends_on:
             - mysql
+        command: >
+            bash -c "
+            php artisan migrate &&
+            php artisan passport:client --personal --no-interaction
+            "
+
     mysql:
         image: 'mysql/mysql-server:8.0'
         ports:

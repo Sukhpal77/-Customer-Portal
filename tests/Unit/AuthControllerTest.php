@@ -4,7 +4,9 @@ namespace Tests\Unit;
 
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Schema;
 use Tests\TestCase;
 
 class AuthControllerTest extends TestCase
@@ -12,6 +14,11 @@ class AuthControllerTest extends TestCase
         public function setUp(): void
         {
             parent::setUp();
+
+            
+            if (Schema::hasTable('users') && User::count() === 0) {
+                Artisan::call('migrate:fresh');
+            }
     
             User::truncate();
         }
